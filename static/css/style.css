@@ -1,0 +1,168 @@
+/* Estilos globais */
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    overflow: hidden;
+    background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
+}
+
+/* Estilizando o canvas para ocupar o fundo */
+canvas {
+    position: fixed; /* Faz o canvas ocupar toda a tela */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1; /* Coloca o canvas atrás de todos os outros elementos */
+    pointer-events: none; /* Impede que o canvas capture eventos de mouse */
+}
+
+/* Container principal */
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1; /* Garantindo que o conteúdo fique na frente */
+}
+
+/* Agrupamento do input e botão */
+.input-group {
+    width: 100%;
+    max-width: 50em;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    gap: 1em; /* Espaçamento entre o input e o botão */
+}
+
+/* Estilo do campo de input */
+.input-group__input {
+    color: #fff;
+    font-size: 1.25rem;
+    line-height: 1;
+    border-style: none;
+    outline: none;
+    height: calc(1em + 1.6em + 0.5em);
+    width: 200%;
+    padding: 0.8em 1em;
+    border-radius: 1.8em;
+    background-image: linear-gradient(#000, #000), linear-gradient(120deg, #f09 0%, #0ff 50%, #9f0 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    border: 0.25em solid transparent;
+    transition: background-position 0.8s ease-out;
+    background-size: 200% 100%; /* Mantém o efeito de gradiente nas bordas */
+}
+
+/* Estilo ao focar no input */
+.input-group__input:focus {
+    border-color: transparent; /* Mantém a borda transparente ao focar */
+}
+
+/* Efeito de hover */
+.input-group__input:hover {
+    background-position: 100% 0;
+}
+
+/* Efeito de foco */
+.input-group__input:focus {
+    outline: 2px dashed #ad2b89;
+    outline-offset: 0.5em;
+}
+
+/* Estilo do botão */
+.submit-button {
+    width: 50%; /* Alinha a largura com o input */
+    padding: 0.8em 1em;
+    margin-top: 1em;
+    border-radius: 1.8em;
+    cursor: pointer;
+    color: lightgrey;
+    transition: background-color 0.3s;
+    border-radius: 1.8em;
+    background-image: linear-gradient(#000, #000), linear-gradient(120deg, #f09 0%, #0ff 50%, #9f0 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    border: 0.25em solid transparent;
+    transition: background-position 0.8s ease-out;
+    background-size: 200% 100%; 
+}
+
+/* Efeito de hover no botão */
+.submit-button:hover {
+    background-color: #bbb;
+}
+
+/* Ajuste para alinhar a frase à esquerda e a URL ao centro */
+.input-group__output {
+    display: flex;
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    width: 30%; /* Largura total do contêiner */
+    padding: 0.8em 1em;
+    border-radius: 1.8em;
+    background-image: linear-gradient(#000, #000), linear-gradient(120deg, #f09 0%, #0ff 50%, #9f0 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    border: 0.25em solid transparent;
+    transition: background-position 0.8s ease-out;
+    background-size: 200% 100%; /* Mantém o efeito de gradiente nas bordas */
+    font-size: 1.25rem;
+}
+
+/* Estilo para a frase "Sua Nova URL:" */
+.output-label {
+    color: lightgrey; /* Altera a cor da frase */
+    font-size: 1.25rem;
+    margin-right: 1em; /* Espaço entre o texto e a URL */
+}
+
+/* Estilo do contêiner da URL */
+.url-container {
+    flex-grow: 1; /* Faz o contêiner da URL ocupar o espaço restante */
+    text-align: center; /* Alinha o conteúdo ao centro */
+}
+
+/* Estilo do link */
+#short-url {
+    font-size: 1.55rem;
+    color: lightblue; /* Herda a cor do contêiner */
+    text-decoration: none; /* Mantém o sublinhado */
+    line-height: 1; /* Ajusta a altura da linha */
+}
+
+/* Estilo ao focar no output */
+.input-group__output:focus {
+    outline: 2px dashed #ad2b89;
+    outline-offset: 0.5em;
+}
+
+/* Estilo do botão de copiar */
+.copy-button {
+    margin-left: 1em; /* Espaço entre a URL e o botão */
+    padding: 0.5em 1em;
+    border-radius: 1.8em;
+    cursor: pointer;
+    color: lightgrey;
+    background-image: linear-gradient(#000, #000), linear-gradient(120deg, #f09 0%, #0ff 50%, #9f0 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    border: 0.25em solid transparent;
+    transition: background-position 0.8s ease-out;
+    background-size: 200% 100%; /* Mantém o efeito de gradiente nas bordas */
+}
+
+.copy-button i {
+    font-size: 1rem; /* Tamanho do ícone */
+    color: lightgrey; /* Cor do ícone */
+}
+
+/* Efeito de hover no botão de copiar */
+.copy-button:hover {
+    background-position: 100% 0; /* Muda a posição do gradiente no hover */
+}

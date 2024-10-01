@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encurte sua URL</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>   
+    <!-- Canvas para a animação -->
+    <canvas id="bgCanvas"></canvas>
+
+        <div class="container">
+            <form action="/submit" method="post" class="form">
+                <div class="input-group">
+                    <input id="myInput" class="input-group__input" type="text" autocomplete="off" name="long_url" placeholder="Insira sua URL original" required>
+                    <button type="submit" class="submit-button">Encurtar URL</button>
+                </div>
+            </form>
+        </div>
+    
+    <!-- Incluir o JavaScript -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
