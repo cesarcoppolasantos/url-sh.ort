@@ -30,6 +30,7 @@ def store_urls(url):
     
     return short_url
 
+
 def get_long_url(short_url):
 
     with open('urls.json', 'r', encoding="UTF-8") as urls:
@@ -42,3 +43,4 @@ def get_long_url(short_url):
             if key == short_url:
 
                 return value[key]
+            
